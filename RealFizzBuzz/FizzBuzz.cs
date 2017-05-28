@@ -13,6 +13,9 @@ namespace RealFizzBuzz
             if (i < 1)
                 throw new DivideByZeroException();
 
+            if (i.ToString().Contains("3"))
+                return "Lucky";
+
             if (i % 15 == 0)
                 return "FizzBuzz";
 

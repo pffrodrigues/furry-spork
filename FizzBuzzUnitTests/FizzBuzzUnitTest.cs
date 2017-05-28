@@ -25,10 +25,10 @@ namespace FizzBuzzUnitTests
         }
 
         [TestMethod]
-        public void IfGiven3_ExpectFizz()
+        public void IfGiven6_ExpectFizz()
         {
             var expect = "Fizz";
-            var actual = _fizzBuzz.DoFizzBuzz(3);
+            var actual = _fizzBuzz.DoFizzBuzz(6);
 
             Assert.AreEqual(expect, actual);
         }
@@ -47,6 +47,15 @@ namespace FizzBuzzUnitTests
         {
             var expect = "FizzBuzz";
             var actual = _fizzBuzz.DoFizzBuzz(15);
+
+            Assert.AreEqual(expect, actual);
+        }
+
+        [TestMethod]
+        public void IfGivenContains3_ExpectLucky()
+        {
+            var expect = "Lucky";
+            var actual = _fizzBuzz.DoFizzBuzz(3);
 
             Assert.AreEqual(expect, actual);
         }
