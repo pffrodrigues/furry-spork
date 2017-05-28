@@ -19,6 +19,22 @@ namespace RealFizzBuzz
                 output.Add(fizzBuzz.DoFizzBuzz(i));
  
             Console.WriteLine(string.Join(" ", output));
+
+            WriteReport(output);
+        }
+
+        static void WriteReport(List<object> result)
+        {
+            Console.WriteLine($"Fizz: { CountResults(result, "Fizz") }");
+            Console.WriteLine($"Buzz: { CountResults(result, "Buzz") }");
+            Console.WriteLine($"FizzBuzz: { CountResults(result, "FizzBuzz") }");
+            Console.WriteLine($"Lucky: { CountResults(result, "Lucky") }");
+            Console.WriteLine($"Integer: { result.Where(s => s.GetType() == typeof(int)).Count() }");
+        }
+
+        static int CountResults(List<object> result, string resultType)
+        {
+            return result.Where(s => s.ToString() == resultType).Count();
         }
     }
 }
